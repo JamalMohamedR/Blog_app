@@ -227,6 +227,11 @@ def saveEdits(blog_id):
     conn.close()
     return redirect(url_for('index'))
 
+@app.route('/thankyou')
+@login_required
+def thankyou():
+    return render_template("thankyou.html")
+
 if __name__ == '__main__':
     with app.app_context():
         db.metadata.create_all(bind=db.engine)
